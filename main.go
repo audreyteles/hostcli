@@ -93,17 +93,18 @@ func setup() {
 	_, err := os.Stat("/etc/hostcli/data.txt")
 
 	if err != nil {
-		log.Fatal(err)
+
+		_ = os.Mkdir("/etc/hostcli", 0644)
+
+		localFile, err := os.Create("/etc/hostcli/data.txt")
+
+		if err != nil {
+			log.Fatalf("Failed to create file: %s", err)
+		}
+
+		_ = localFile.Close()
+
 	}
-
-	_ = os.Mkdir("/etc/hostcli", 0644)
-
-	localFile, err := os.Create("/etc/hostcli/data.txt")
-	if err != nil {
-		log.Fatalf("Failed to create file: %s", err)
-	}
-
-	_ = localFile.Close()
 
 }
 
