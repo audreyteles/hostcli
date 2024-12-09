@@ -2,7 +2,7 @@
 
 ### How it works
 
-- Download the program file.
+- [Download](https://github.com/audreyteles/hostcli/releases/tag/0.1.0) the program file.
 
 - Adjust the file permissions to make it executable:
    ```shell
